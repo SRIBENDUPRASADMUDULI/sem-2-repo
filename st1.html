@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 10px; }
+
+        .container
+         { height:400px; border: 1px solid #ccc; padding: 20px; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); 
+        input { padding: 8px; margin-right: 10px; }
+        button { padding: 8px 15px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+        #result { margin-top: 15px; font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Even/Odd Checker</h2>
+    <input type="number" id="userInput" placeholder="Enter a number">
+    <button onclick="checkEvenOdd()">Check</button>
+    <div id="result"></div>
+</div>
+
+<script>
+ function checkEvenOdd() {
+    
+        const number = document.getElementById('userInput').value;
+        const resultDisplay = document.getElementById('result');
+
+    
+    
+        if (number === "") {
+            resultDisplay.innerText = "Please enter a value!";
+            resultDisplay.style.color = "orange";
+            return;
+        }
+
+    
+        const num = Number(number);
+
+        if (num % 2 === 0) {
+            resultDisplay.innerText = num + " is an Even number.";
+            resultDisplay.style.color = "green";
+        } else {
+            resultDisplay.innerText = num + " is an Odd number.";
+            resultDisplay.style.color = "red"; 
+        }
+    }
+</script>
+
+</body>
+</html>
